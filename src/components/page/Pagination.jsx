@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import BeerCard from "./BeerCard";
+import BeerCard from "../BeerCard";
 
 function Pagination(props) {
 
@@ -44,6 +44,7 @@ function Pagination(props) {
     //window.scrollTo(0, 0)
   };
   return (
+    
     <div className="container">
       <div className="row m-2">
         {beers.map((beer) => {

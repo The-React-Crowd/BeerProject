@@ -10,7 +10,7 @@ function Search(props) {
     const urlParams = new URLSearchParams(location.search);
     const search = urlParams.get("q");
     const [products, setProducts] = useState([]);
-    const BASE_URL = "https://api.punkapi.com/v2/beers?page=1&per_page=60";
+    const BASE_URL = "https://api.punkapi.com/v2/beers?";
 
     const inputHandler = (e) =>
     {
@@ -32,7 +32,7 @@ function Search(props) {
 
   useEffect(() => {
 
-    fetch(`${BASE_URL}?name=${search}`)
+    fetch(`${BASE_URL}name=${search}`)
       .then((response) => response.json())
       .then((json) => setProducts(json.products))
   }, [search]);
@@ -40,13 +40,16 @@ function Search(props) {
 
   return (
     <>
-
+    
+    <div className="container m-4">
     <form onSubmit={inputHandler} className="row form-inline">
-      <input className="col form-control mr-sm-2" type="search" name="search" autocomplete="on" placeholder="Search Beer" aria-label="Search" defaultValue={q} />
-      <button className="col-1 btn btn-outline-primary" type="submit">Search</button>
+      <input className="col m-1 form-control mr-sm-2" type="search" name="search" autocomplete="on" placeholder="Search Beer" aria-label="Search" defaultValue={q} />
+      <button className="col-1 m-1 btn btn-outline-primary" type="submit">Search</button>
+      <button className="col-1 m-1 btn btn-outline-success" type="reset">Reset</button>
     </form>
-  
-
+    </div>
+      
+      
           {location.pathname === 'search' && <div>
 
           {products

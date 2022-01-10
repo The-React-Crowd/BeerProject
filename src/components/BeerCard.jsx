@@ -7,7 +7,9 @@ function BeerCard(props) {
 return <>
 
    <div className="card shadow-sm w-100">
+   <div className="text-center">
    <img src={image_url} className="card-img-top m-5" alt="beers" style={{width: "20vh", height: "45vh" }} />
+   </div>
      <div className="card-body">
        <h6 className="card-title text-center h2">{name}</h6>
        <p className="card-subtitle mb-2 text-muted text-center">

@@ -1,5 +1,6 @@
-import ReactPaginate from "react-paginate";
 import { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
+import BeerCard from "./BeerCard";
 
 function Pagination(props) {
 
@@ -46,18 +47,16 @@ function Pagination(props) {
     <div className="container">
       <div className="row m-2">
         {beers.map((beer) => {
-          return (
-            <div key={beer.id} className="card-group col-sm-6 col-md-4 v my-2">
-              <div className="card shadow-sm w-100">
-              <img src={beer.image_url} className="card-img-top m-5" alt="beers" style={{ width: "20vh", height: "45vh" }} />
-                <div className="card-body">
-                  <h5 className="card-title text-center h2">{beer.name}</h5>
-                  <h6 className="card-subtitle mb-2 text-muted text-center">
-                  First Brewed In :{beer.first_brewed}
-                  </h6>
-                </div>
-              </div>
-            </div>
+          return (  
+            <div key={beer.id} className="card-group col-sm-6 col-md-4 v my-2">       
+               <BeerCard
+               image_url={beer.image_url}
+               name={beer.name}
+               id={beer.id}
+               first_brewed={beer.first_brewed}
+               >
+               </BeerCard>
+            </div>  
           );
         })}
       </div>

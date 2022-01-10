@@ -3,63 +3,54 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 function Search(props) {
 
-    const location = useLocation(); 
-    const navigate = useNavigate(); 
-    const [data, setData] = useState([]);
+    const location = useLocation();  
+    const navigation = useNavigate() 
+    const [q, setQ] = useState("")   
 
     const urlParams = new URLSearchParams(location.search);
-    const [urlQ, setUrlQ] = useState(urlParams.get('q'));
+    const search = urlParams.get("q");
+    const [products, setProducts] = useState([]);
+    const BASE_URL = "https://api.punkapi.com/v2/beers?page=1&per_page=60";
+
+    const inputHandler = (e) =>
+    {
+      e.preventDefault()
+      setQ(e.target.search.value)
+    console.log(q)
+    navigation(`/search?q=${(e.target.search.value).toLowerCase()}`)
+
+    }
+
+    useEffect(() => {
+      if(location.search.length === 0) {
+        console.log("setQ sıfırla")
+        setQ("")
+        console.log(q)
+      }
+    }, [location, q])
 
 
   useEffect(() => {
 
-    const URL = `https://api.punkapi.com/v2/beers?page=1&per_page=60`;
-    fetch(URL)
+    fetch(`${BASE_URL}?name=${search}`)
       .then((response) => response.json())
-      .then((json) => {
-        setData(json.beers);
-        console.log(json.beers);
-      });
-  }, []);
-
-  function formHandler(event) {
-    event.preventDefault();
-    setUrlQ(event.target.q.value);
-    navigate(`/beers?=${event.target.q.value}`);
-  }
+      .then((json) => setProducts(json.products))
+  }, [search]);
 
 
   return (
     <>
-     <form onSubmit={formHandler}>
-            <div class="mb-3">
-              
-              <label htmlfor="search" className="form-label">
-                Search Beer
-              </label>
-              <input
-                name="q"
-                type="text"
-                className="form-control"
-                id="search"
-                defaultValue={urlQ}
-              />
-              <div className='searchIcon'></div>
 
-            </div>
-    
-            <button type="reset" className="btn btn-warning m-2">
-              Reset
-            </button>
-            <button type="submit" className="btn btn-primary m-2">
-              Submit
-            </button>
-          </form>
+    <form onSubmit={inputHandler} className="row form-inline">
+      <input className="col form-control mr-sm-2" type="search" name="search" autocomplete="on" placeholder="Search Beer" aria-label="Search" defaultValue={q} />
+      <button className="col-1 btn btn-outline-primary" type="submit">Search</button>
+    </form>
+  
 
-          {location.pathname === '/search' && <div>
+          {location.pathname === 'search' && <div>
 
-          {data
-        .filter((beer) => beer.name.includes(urlQ))
+          {products
+        .filter((beer) => beer.name.includes(q))
         .map((beer) => {
           return (
             <div key={beer.id} className="card-group col-sm-6 col-md-4 v my-2">

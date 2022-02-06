@@ -6,8 +6,8 @@
 
 |Team Members|
 |---------|
-|Büşra Akbaş|
 |Melisa Deniz|
+|Büşra Akbaş|
 |Mervenur Kuyumcu|
 
 ## Technologies that we used

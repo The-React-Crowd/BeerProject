@@ -8,13 +8,12 @@ function App() {
 
   return <>
   <Navbar />
-  <div className="container my-3 mx-2">
-       <div className="row">
-
-         <Home />
-
-      </div>
-  </div>
+  
+  <br/>
+  <br/>
+  <br/>
+  
+   <Home />
   <Footer />
 </>
   

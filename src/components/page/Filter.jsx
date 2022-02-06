@@ -2,7 +2,7 @@
 // import PhFilter from './PhFilter';
 // import SrmFilter from './SrmFilter';
 
-function Filters(props) {
+function Filter(props) {
 
 
 return <>
@@ -20,7 +20,7 @@ return <>
          </div>
     </div>
  </div>
-            
+            <div><hr /><hr /></div>
 </>
 }
-export default Filters;
+export default Filter;

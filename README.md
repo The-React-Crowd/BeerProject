@@ -10,7 +10,7 @@
 |Melisa Deniz|
 |Mervenur Kuyumcu|
 
-## Technologies that I used
+## Technologies that we used
 - React
 - React Router Dom
 - JavaScript

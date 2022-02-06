@@ -4,13 +4,10 @@
 
 ### Here is the [LINK](punk-api-project-trc.netlify.app/).
 
-## Team Members
-
-
-|Melisa Deniz|
+|Team Members|
 |---------|
 |Büşra Akbaş|
-|---------|
+|Melisa Deniz|
 |Mervenur Kuyumcu|
 
 ## Technologies that I used

@@ -11,10 +11,8 @@
 |Mervenur Kuyumcu|
 
 ## Technologies that we used
-- React
-- React Router Dom
+- ReactJS
 - JavaScript
-- Axios
-- Bootstrap 5
-- React Icons
-- Redux
+- Bootstrap
+- Antd
+

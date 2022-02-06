@@ -6,11 +6,9 @@
 
 ## Team Members
 
-|:-------:|
+
 |Melisa Deniz|
-|:-------:|
 |Büşra Akbaş|
-|:-------:|
 |Mervenur Kuyumcu|
 
 ## Technologies that I used

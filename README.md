@@ -4,7 +4,7 @@
 
 ### Here is the [LINK](punk-api-project-trc.netlify.app/).
 
-|Team Members|
+|TEAM MEMBERS|
 |---------|
 |Büşra Akbaş|
 |Melisa Deniz|
